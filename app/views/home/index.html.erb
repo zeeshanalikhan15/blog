@@ -2,10 +2,10 @@
  <div> Welcome <%= current_user.email %> </div> 
   <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
 <% else %>
-  <%= button_to "Sign in", new_user_session_path %> 
+  <%= button_to 'Login with Google', user_google_oauth2_omniauth_authorize_path, method: :post, :data => {turbo: "false"} %> 
 <% end %>
 
-<%= button_to 'Login with Google', user_google_oauth2_omniauth_authorize_path, method: :post, :data => {turbo: "false"} %>
+
 
 
 <h1>Home#index</h1>
